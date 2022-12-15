@@ -15,6 +15,7 @@ html{
 
 body{
     background-image: url("../../assets/img/welcome-background.jpg");
-    backdrop-filter:  brightness(40%);
+    backdrop-filter:  brightness(40%) blur(2px);
+
 }
 

@@ -14,27 +14,26 @@ function Welcome(props) {
                     <div className="message-info-container">
                         <h3 className="message-card--title">Bienvenido a Movies App</h3>
                         <p className="message-card-price"><span>$</span> 99</p>
-                        <p className="message-card-saving">*Ahorras $129 comparado al message mensual.</p>
-                        <button className="message-card--ca">Escoger este<span></span></button>
+                        <p className="message-card-saving">The best movie streaming app of the country to make your days greatfull</p>
+                        
                     </div>
                 </article>
                 <article className="welcome-container--card">
                     <div className="message-info-container">
-                        <h3 className="message-card--title">Pago Anual</h3>
+                        <h3 className="message-card--title">Enjoy Your Movies </h3>
                         <p className="message-card-price"><span>$</span> 99</p>
-                        <p className="message-card-saving">*Ahorras $129 comparado al message mensual.</p>
-                        <button className="message-card--ca">Escoger este<span></span></button>
+                        <p className="message-card-saving">The best movie streaming app of the country to make your days greatfull</p>
                     </div>
                 </article>
                 <article className="welcome-container--card">
                     <div className="message-info-container">
-                        <h3 className="message-card--title">Pago Anual</h3>
+                        <h3 className="message-card--title">Enjoy Your Movies </h3>
                         <p className="message-card-price"><span>$</span> 99</p>
-                        <p className="message-card-saving">*Ahorras $129 comparado al message mensual.</p>
-                        <button className="message-card--ca">Escoger este<span></span></button>
+                        <p className="message-card-saving">The best movie streaming app of the country to make your days greatfull</p>
                     </div>
                 </article>
             </section>
+            <button className="start-button">Comenzar</button>
 
         </section>
     );
