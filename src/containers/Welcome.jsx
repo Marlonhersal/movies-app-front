@@ -1,6 +1,6 @@
 import React from 'react';
-
-import '../styles/welcome.css'
+import {Link } from "react-router-dom";
+import '../styles/welcome.scss'
 
 function Welcome(props) {
     return (
@@ -33,7 +33,7 @@ function Welcome(props) {
                     </div>
                 </article>
             </section>
-            <button className="start-button">Comenzar</button>
+            <button className="start-button"><Link to="/login">Comenzar</Link></button>
 
         </section>
     );

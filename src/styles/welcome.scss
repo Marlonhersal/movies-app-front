@@ -1,4 +1,4 @@
-
+@import 'vars';
 
 .main-welcome-container{
     display: flex;
@@ -122,7 +122,7 @@
     border: 2px solid #F7931A;
     border-radius: 4px;
     margin: 20px auto;
-    background: #0066FF;
+    background: var(--blue);
     border-radius: 15px;
 }
 

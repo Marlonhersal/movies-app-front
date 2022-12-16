@@ -4,13 +4,14 @@ import { Route, Routes} from 'react-router-dom';
 import '../styles/global.scss';
 
 import Welcome from "../containers/Welcome";
+import Login from "../containers/Login";
 
 const App = ()=>{
     return (
         <React.Fragment>
             <Routes>
                 <Route e path='/' element={<Welcome/>}/>
-                <Route path='/im' element={<h1>Hola Mundo</h1>}/>
+                <Route path='/login' element={<Login/>}/>
             </Routes>
         </React.Fragment>
     )
