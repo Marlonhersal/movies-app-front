@@ -1,39 +1,39 @@
 import React from 'react';
 import {Link } from "react-router-dom";
-import '../styles/welcome.scss'
+import Style from '../styles/Welcome.module.scss'
 
 function Welcome(props) {
     return (
-        <section id="welcome" className="main-welcome-container">
-            <div className="welcome--title"> 
+        <section id="welcome" className={Style.main_welcome_container}>
+            <div className={Style.welcome_title}> 
                 <h2>Movies App</h2>
                 <p>Miles de titulos al alcance de un click desde 99 peso</p>
             </div>
-            <section className="welcome-container--slider">
-                <article className="welcome-container--card">
-                    <div className="message-info-container">
-                        <h3 className="message-card--title">Bienvenido a Movies App</h3>
-                        <p className="message-card-price"><span>$</span> 99</p>
-                        <p className="message-card-saving">The best movie streaming app of the country to make your days greatfull</p>
+            <section className={Style.welcome_container__slider}>
+                <article className={Style.welcome_container__card}>
+                    <div className={Style.message_info_container}>
+                        <h3 className={Style.message_card__title}>Bienvenido a Movies App</h3>
+                        <p className={Style.message_card_price}><span>$</span> 99</p>
+                        <p className={Style.message_card_saving}>The best movie streaming app of the country to make your days greatfull</p>
                         
                     </div>
                 </article>
-                <article className="welcome-container--card">
-                    <div className="message-info-container">
-                        <h3 className="message-card--title">Enjoy Your Movies </h3>
-                        <p className="message-card-price"><span>$</span> 99</p>
-                        <p className="message-card-saving">The best movie streaming app of the country to make your days greatfull</p>
+                <article className={Style.welcome_container__card}>
+                    <div className={Style.message_info_container}>
+                        <h3 className={Style.message_card__title}>Enjoy Your Movies </h3>
+                        <p className={Style.message_card_price}><span>$</span> 99</p>
+                        <p className={Style.message_card_saving}>The best movie streaming app of the country to make your days greatfull</p>
                     </div>
                 </article>
-                <article className="welcome-container--card">
-                    <div className="message-info-container">
-                        <h3 className="message-card--title">Enjoy Your Movies </h3>
-                        <p className="message-card-price"><span>$</span> 99</p>
-                        <p className="message-card-saving">The best movie streaming app of the country to make your days greatfull</p>
+                <article className={Style.welcome_container__card}>
+                    <div className={Style.message_info_container}>
+                        <h3 className={Style.message_card__title}>Enjoy Your Movies </h3>
+                        <p className={Style.message_card_price}><span>$</span> 99</p>
+                        <p className={Style.message_card_saving}>The best movie streaming app of the country to make your days greatfull</p>
                     </div>
                 </article>
             </section>
-            <button className="start-button"><Link to="/login">Comenzar</Link></button>
+            <button className={Style.start_button}><Link to="/login">Comenzar</Link></button>
 
         </section>
     );
