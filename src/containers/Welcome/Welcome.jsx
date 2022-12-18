@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link } from "react-router-dom";
-import Style from '../styles/Welcome.module.scss'
+import Style from './Welcome.module.scss'
 
 function Welcome(props) {
     return (

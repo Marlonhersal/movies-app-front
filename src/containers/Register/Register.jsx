@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Style from '../styles/Register.module.scss'
+import Style from './Register.module.scss'
 
 function Register(props) {
     return (
