@@ -1,0 +1,21 @@
+.cards_container{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    gap: 26px;
+    place-content: center;
+}
+
+
+
+@media (max-width:640px)
+{
+    .cards-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 140px);
+        gap: 26px;
+    }
+
+}
+    
+    

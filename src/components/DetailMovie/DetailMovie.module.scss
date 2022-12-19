@@ -1,0 +1,43 @@
+.movieDetail_container{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto ;
+    
+    place-content: center;
+    color: white;
+}
+
+.c1 {
+    border-radius: 10px;
+}
+.c2{
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.c3{
+    margin-top: 20px;
+   
+}
+
+@media (min-width:640px)
+{
+    .movieDetail_container{
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto ;
+        place-content: center;
+        color: white;
+        }
+    
+    
+    .c3{
+        grid-column: 1/3;
+    }
+   
+    
+
+}
