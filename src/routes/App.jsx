@@ -9,6 +9,7 @@ import Login from "../containers/Login/Login";
 import Register from "../containers/Register/Register";
 import Browse from "../containers/Browse/Browse";
 import MovieDetail from "../containers/MovieDetail/MovieDetail";
+import DirectorsBrowser from "../containers/Directors/DirectorsBrowser";
 
 const App = ()=>{
     return (
@@ -19,6 +20,7 @@ const App = ()=>{
                 <Route path='/register' element={<Register/>}/>
                 <Route path='/browse' element={<Browse/>}/>
                 <Route path='/movie/:movieId' element={<MovieDetail/>}/>
+                <Route path="/director/:id" component={<DirectorsBrowser/>}/>
             </Routes>
         </React.Fragment>
     )

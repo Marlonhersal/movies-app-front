@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom';
 //Redux
 import {getMovieDetail} from "../../actions/index";
 
-function MovieDetail(props) {
+function  MovieDetail(props) {
     const despachador = useDispatch()
     let { movieId } =  useParams();
     despachador(getMovieDetail(movieId))
@@ -17,7 +17,7 @@ function MovieDetail(props) {
     return (
         <div>
             <NavBar/>
-            <DetailMovie Poster={movieDetail.Poster} />
+            <DetailMovie Poster={movieDetail.Poster} Title={movieDetail.Title} Year={movieDetail.Year} Country= {movieDetail.Country} Director= {movieDetail.Director}  Actors= {movieDetail.Actors}/>
         </div>
     );
 }

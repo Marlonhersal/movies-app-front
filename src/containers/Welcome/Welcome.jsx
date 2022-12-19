@@ -34,6 +34,7 @@ function Welcome(props) {
                 </article>
             </section>
             <button className={Style.start_button}><Link to="/login">Comenzar</Link></button>
+            <button className={Style.view_button}><Link to="/browse">Ver Catalgo</Link></button>
 
         </section>
     );

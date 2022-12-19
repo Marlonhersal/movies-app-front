@@ -95,7 +95,7 @@
     color: #dadada;
 }
 
-.start_button{
+.start_button, .view_button{
     color: white;
     font-family: 'Inter';
     font-style: normal;
@@ -113,7 +113,13 @@
 
 .start_button a{
     text-decoration: none;
+    color: white;
 }
+.view_button a{
+    text-decoration: none;
+    color: white;
+}
+
 @media (min-width:1020px) {
     .welcome_container__slider{
         justify-content: center;
