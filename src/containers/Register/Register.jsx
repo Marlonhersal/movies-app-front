@@ -1,4 +1,6 @@
+import { Alert } from 'bootstrap';
 import React, {useState} from 'react';
+import { Link, redirect } from 'react-router-dom';
 
 import Style from './Register.module.scss'
 
@@ -15,12 +17,19 @@ function Register(props) {
           body: JSON.stringify({ name, email, password, age:18, role: "customer"}),
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY3MDQ1NDM2N30.4Mac21CPF_PEXQGRZG5kgPuzFH2dEj1L8ep5u_TBrXA'
           },
         })
           .then((response) => response.json())
           .then((data) => {
-            console.log(data)
+            if(data.statusCode === 200){
+                alert('Cuenta Creada')
+                window.location.replace('/login');
+            }
+            else{
+                alert('Datos Incorrectos')
+            }
+           
+            
           })
           .catch((error) => {
             // manejar el error
