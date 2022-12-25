@@ -13,7 +13,6 @@ import {addMovieFavorite,getMovies} from "../../actions/index";
 function MoviesBrowser(props) {
     return (
         <section className={Style.main_container}>
-          <button onClick={()=>{console.log(props.movies)}}>Mostrar</button>
         <div className={Style.cards_container}>
          {
           props.movies?
@@ -22,7 +21,6 @@ function MoviesBrowser(props) {
         }):
         <h1>No se encontraron resultados</h1>
         }
-            
         </div>
     </section>
 

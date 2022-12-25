@@ -8,6 +8,8 @@ import * as bootstrap from 'bootstrap'
 
 import SearchBar from '../SearchBar/SearchBar';
 
+import Style from "./NavBar.scss"
+
 
 function NavBar(props) {
     const token = localStorage.getItem('Token');
@@ -30,22 +32,48 @@ function NavBar(props) {
           <li className="nav-item">
             <a className="nav-link active" aria-current="page" href="#">Home</a>
           </li>
-          <li className="nav-item">
+          {
+            decoded.role === 'admin'?
+            <li className="nav-item admin-tools-li">
+            <a className="nav-link active" aria-current="page" href="/admin">ADMIN TOOLS</a>
+          </li>: <li className="nav-item">
             <a className="nav-link active" aria-current="page" href="#">Favoritas</a>
           </li>
+          }
+          
           <li className="nav-item">
             <a className="nav-link active" aria-current="page" href="#">Directores</a>
           </li>
           <li className="nav-item">
             <a className="nav-link active" aria-current="page" href="#">Actores</a>
           </li>
+          
             
-        </ul>
           <SearchBar/>
-        <div>
-          <p>{decoded.name + " - " + decoded.email}</p>
-          <button onClick={logout}>Logout</button>
-        </div>
+          <div className="nav-item user-info-movile">
+            <p className='c1'>{decoded.name}</p>
+            <p className='c2'>{decoded.email}</p> 
+            <div className='c3'> 
+            <button onClick={logout}  type="button" class="btn btn-secondary">LogOut</button>
+            </div>
+          </div>
+        </ul>
+          <div className="btn-group dropstart">
+            <button type="button" className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            {decoded.role}
+            </button>
+              <ul className="dropdown-menu">
+                <li >
+                {decoded.name}
+                </li>
+                <li >
+                {decoded.email}
+                </li>
+                <button onClick={logout}  type="button" className="btn btn-secondary ">
+                LogOut
+                </button>
+              </ul>
+          </div>
         </div>
       </div>
     </nav>

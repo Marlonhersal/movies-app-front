@@ -1,0 +1,27 @@
+
+.user-info-movile{
+    display: none;    
+}
+@media (max-width: 640px) {
+    .dropstart {
+      display: none;
+ 
+    }
+    .user-info-movile{
+        margin: 20px 0;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto ;
+    }
+    .user-info-movile p{
+        margin: 0;
+    }
+    
+    .c3{
+        grid-column: 2;
+        grid-row: 1/3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  } 
