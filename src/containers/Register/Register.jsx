@@ -14,21 +14,16 @@ function Register(props) {
         // enviar la solicitud POST a la API
         fetch('http://localhost:3000/users/', {
           method: 'POST',
-          body: JSON.stringify({ name, email, password, age:18, role: "customer"}),
+          body: JSON.stringify({ name, email, password, role:'customer'}),
           headers: {
             'Content-Type': 'application/json',
           },
         })
           .then((response) => response.json())
           .then((data) => {
-            if(data.statusCode === 200){
+                console.log(data)
                 alert('Cuenta Creada')
                 window.location.replace('/login');
-            }
-            else{
-                alert('Datos Incorrectos')
-            }
-           
             
           })
           .catch((error) => {
