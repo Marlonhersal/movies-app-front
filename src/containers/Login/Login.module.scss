@@ -93,6 +93,9 @@
     position: relative;
     top: 15px;
   }
+  .message{
+    color: red;
+  }
   @media (max-width: 640px) {
     .logo {
       display: block;
