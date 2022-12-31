@@ -35,7 +35,7 @@ function NavBar(props) {
           {
             decoded.role === 'admin'?
             <li className="nav-item admin-tools-li">
-            <a className="nav-link active" aria-current="page" href="/admin">ADMIN TOOLS</a>
+            <a className="nav-link active" aria-current="page" href="/admin/actors">ADMIN TOOLS</a>
           </li>: <li className="nav-item">
             <a className="nav-link active" aria-current="page" href="#">Favoritas</a>
           </li>

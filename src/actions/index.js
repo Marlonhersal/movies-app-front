@@ -2,6 +2,21 @@
 export function addMovieFavorite(payload) {
     return { type: "ADD_MOVIE_FAVORITE", payload };
 }
+export function addItemLoaded(element, id, token) {
+    return function(dispatch) {
+    return fetch(`http://localhost:3000/${element}/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " +  token
+      },
+  })
+      .then(response => response.json())
+      .then(response => {
+        dispatch({ type: "ADD_ITEM_LOADED", payload : response});
+      });
+  };
+}
 
 export function getMovies(titulo) {
     return function(dispatch) {
@@ -10,6 +25,21 @@ export function getMovies(titulo) {
         .then(json => {
           dispatch({ type: "GET_MOVIES", payload: json });
         });
+    };
+}
+export function getItems(entidad, token) {
+    return function(dispatch) {
+      return fetch(`http://localhost:3000/${entidad}/`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer " +  token
+        },
+    })
+    .then((response) => response.json())
+    .then((response) => {
+      dispatch({type: "GET_ITEMS", payload: response})
+    } )
     };
 }
 

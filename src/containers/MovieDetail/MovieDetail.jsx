@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from '../../components/NavBar/NavBar';
 import DetailMovie from '../../components/DetailMovie/DetailMovie';
 
-import {useDispatch, useSelector,connect } from 'react-redux';
+import {useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 //Redux

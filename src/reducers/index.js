@@ -1,7 +1,9 @@
 const initialState = {
     moviesFavourites: [],
     moviesLoaded: [],
-    movieDetail: {}
+    movieDetail: {},
+    items: [],
+    itemLoaded: {}
   };
 
   function rootReducer(state = initialState, action) {
@@ -25,6 +27,16 @@ const initialState = {
             return {
                 ...state,
                 movieDetail: action.payload
+            }
+        case "GET_ITEMS":
+            return {
+                ...state,
+                items: action.payload
+            }
+        case "ADD_ITEM_LOADED":
+            return {
+                ...state,
+                itemLoaded: action.payload
             }
         default:
             break;
