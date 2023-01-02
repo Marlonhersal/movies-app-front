@@ -22,8 +22,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
       <Route element={<PrivateRoute user={token} path="/"/>}>
         <Route path="/browse" element= {<Browse/>} />
-        <Route path="/admin/:element" element= {<AdminTols/>} />
-        <Route path="/admin/:element/:id" element= {<AdminTols/>} />
+        <Route exact path="/admin/:element/:id" element= {<AdminTols/>} />
         <Route path="/movie/:movieId" element={<MovieDetail />} />
         <Route path="/director/:id" element={<DirectorsBrowser />} />
       </Route>

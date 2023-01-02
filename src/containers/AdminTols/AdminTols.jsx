@@ -13,14 +13,14 @@ function AdminTols(props) {
     const despachador = useDispatch()
     let { element , id} =  useParams();
     if (element) despachador(getItems(element, token))
-    if(id) despachador(addItemLoaded(element, id, token))
-    
+    if (id) despachador(addItemLoaded(element, id, token))
+
     return (
         <div>
             <NavBarAdmin/>
             <div className={S.container}>
-                <Items className={S.c1} element={element} />
-                <Post className={S.c2} element={element}/>
+                <Items className={S.c1} element={element}  />
+                <Post className={S.c2} element={element} id={id} token={token}/>
             </div>
         </div>
     );

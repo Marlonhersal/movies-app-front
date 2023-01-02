@@ -35,16 +35,16 @@ function NavBarAdmin(props) {
                 <a className="nav-link active" aria-current="page" href="#">Home</a>
               </li>
                 <li className="nav-item admin-tools-li">
-                <Link to="/admin/users">Usuarios</Link>
+                <Link to="/admin/users/1">Usuarios</Link>
               </li>
               <li className="nav-item">
-              <Link to="/admin/movies">Peliculas</Link>
+              <Link to="/admin/movies/1">Peliculas</Link>
               </li>
               <li className="nav-item">
-              <Link to="/admin/actors">Actores</Link>
+              <Link to="/admin/actors/1">Actores</Link>
               </li>
               <li className="nav-item">
-              <Link to="/admin/directors">Directors</Link>
+              <Link to="/admin/directors/1">Directors</Link>
               </li>
               <div className="nav-item user-info-movile">
                 <p className='c1'>{decoded.name}</p>
