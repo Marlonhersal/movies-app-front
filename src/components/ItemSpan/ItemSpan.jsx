@@ -2,11 +2,13 @@ import React from 'react';
 import { useDispatch} from "react-redux"
 import {addItemLoaded} from "../../actions/index";
 
+import S from "./ItemSpan.module.scss"
+
 function ItemSpan(props) {
     return (
-        <div >
-            <span>{props.id}</span>
-            <span>{props.name}</span>
+        <div>
+            <span className={S.id}>{props.id} </span>
+            <span className={S.name}>{props.name}</span>
         </div>
     );
 }

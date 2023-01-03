@@ -10,12 +10,11 @@ function Items(props) {
     const items = useSelector(state => state.items)
     return (
         <div className={S.container}>
-            <h1>{props.element}</h1>
+            <h1 className={S.title}>{props.element}</h1>
             <div>
                 {items.map((item)=>{
-                    return <Link to={`/admin/${props.element}/${item.id}`}><ItemSpan id={item.id} name= {item.name}  element={props.element}/></Link>
+                    return <Link to={`/admin/${props.element}/${item.id}`} className={S.list_element}><ItemSpan id={item.id} name= {item.name}  element={props.element}/></Link>
                 })}
-                
             </div>
         </div>
     );

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import S from "./Post.module.scss";
+import S from "./Crud.module.scss";
 import { useSelector } from "react-redux";
 
 function Post(props) {
@@ -7,7 +7,6 @@ function Post(props) {
   const [datos, setDatos] = useState({});
   const [newItem, setNewItem] = useState(false);
   const [uptdate, setUpdate] = useState(true);
-
   const notUptate = ["updatedAt", "createdAt", "id", "age", "movie","actors", "movies"];
 
   useEffect(() => {
@@ -52,7 +51,6 @@ function Post(props) {
   };
 
   const borrar = () => {
-    console.log(props.element, props.id)
     fetch(`http://localhost:3000/${props.element}/${props.id}`, {
       method: "DELETE",
       headers: {
@@ -62,7 +60,8 @@ function Post(props) {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res)
+        if(res.statusCode) return alert("Verifica que el elemnto que deseas borrar no está asociado a nada");
+        alert(res, "borrado")
       })
       .catch(function (error) {
         console.log("Hubo un problema con la petición Fetch:" + error.message);
@@ -127,57 +126,92 @@ function Post(props) {
       });
   };
 
+  const eliminarActor =(id)=>{
+    fetch(`http://localhost:3000/movies/remove-actor/` + id, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + props.token,
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+      })
+  }
+
   return (
-    <form className={S.container}>
+    <div className={S.container}>
+
+    <form >
+      {/* Renderizado de los inputs para observar y modificar */}
       {Object.keys(datos).map((key, i) => (
+        /* Keys que no se quieren mostrar */
+        key != "age"?
         <div key={`input-${i}`}>
-          <label htmlFor={`key`}>{key}</label>
-          {props.element == "user" ? (
+          <label htmlFor={`key`}>{key}   :</label>
+          {
+          //Si lo se va a mostar son los datos de los usuarios no se permite modificar los datos
+          props.element == "user" ?
+          (
             <span>{datos[key]}</span>
-          ) : !notUptate.includes(key) ? (
+          ) : 
+            //Si no se renderiza un input con datos cargados para editarlos
+            
+            //Se excluyen key como el id o las fechas de creacion para no permitir editarlo
+            !notUptate.includes(key) ? (
             <input
               type="text"
               id={key}
               name={key}
               value={datos[key]}
               onChange={handleDataChange}
+              className={S.inputsUpdate}
             />
-          ) : (
+          ) : 
+          //En caso de que no se quiera dar la posiblidad de editar, simplemente se mustran los datos como texto
+          (
             <span>
-              {typeof datos[key] != "object"
+              {
+              //Si los datos son objetos se renderiza una lista
+              typeof datos[key] != "object"
                 ? datos[key]
                 : datos[key].map((x) => (
-                    <div>
-                      <span>{x.id}</span>
-                      <span>{x.name}</span>
+                    <div className={S.objectList}>
+                      <span>{x.id} </span>
+                      <span>{x.name}  </span>
+                      <input type="button" value="X" className={S.deleteButton} onClick={()=>eliminarActor(x.MovieActor.id)} />
                     </div>
                   ))}
             </span>
           )}
-        </div>
+        </div>: null
       ))}
 
       {
-        props.element == "movies"?<div >
-        <label>New {props.element}</label>
+        props.element == "movies"?<div className={S.addItemInputs} >
+        <label>Agregar actor  :</label>
         <input type="number" placeholder="actor id" id="idActor" />
         <input type="button" value="Agregar" onClick={agregarActor} />
         </div>:
         null
       }
       
-
-      <input type="button" value="mostrar" onClick={() => console.log(datos)} disabled= "true"/>
+      <div className={S.buttonsContainer}>
+      {/* <input type="button" value="mostrar" onClick={() => console.log(datos)} disabled= "true"/> */}
 
       <input type="button" value="Actualizar"  onClick={actualizar} disabled={uptdate || newItem} />
       <input type="button" value="borrrar" id="delete_button" onClick={borrar} disabled={newItem}/>
       {
-        newItem? <input type="button" value="Crear" onClick={publicar}/>:
+        newItem?
+         <input type="button" value="Crear" onClick={publicar}/>:
         <input type="button" value="Nuevo" id="create_button" onClick={create}/>
       }
+      </div>
       
       
     </form>
+    </div>
   );
 }
 
