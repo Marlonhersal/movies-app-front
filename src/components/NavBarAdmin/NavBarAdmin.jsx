@@ -32,19 +32,19 @@ function NavBarAdmin(props) {
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
+              <Link className="nav-link active" to="/browse">Home</Link>
               </li>
                 <li className="nav-item admin-tools-li">
-                <Link to="/admin/users/1">Usuarios</Link>
+                <Link className="nav-link active" to="/admin/users">Usuarios</Link>
               </li>
               <li className="nav-item">
-              <Link to="/admin/movies/1">Peliculas</Link>
+              <Link className="nav-link active" to="/admin/movies">Peliculas</Link>
               </li>
               <li className="nav-item">
-              <Link to="/admin/actors/1">Actores</Link>
+              <Link className="nav-link active" to="/admin/actors">Actores</Link>
               </li>
               <li className="nav-item">
-              <Link to="/admin/directors/1">Directors</Link>
+              <Link className="nav-link active" to="/admin/directors">Directores</Link>
               </li>
               <div className="nav-item user-info-movile">
                 <p className='c1'>{decoded.name}</p>

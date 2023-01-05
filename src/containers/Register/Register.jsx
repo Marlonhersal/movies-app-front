@@ -4,6 +4,8 @@ import { Link, redirect } from "react-router-dom";
 
 import Style from "./Register.module.scss";
 
+const {config}= require('../../../config/config')
+
 function Register(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -16,7 +18,7 @@ function Register(props) {
     if (!/\S+@\S+\.\S+/.test(email)) return setMessage("Email requerido");
     if (!password) return setMessage("Contraseña requerida");
 
-    fetch("http://localhost:3000/users/", {
+    fetch(`${config.apiUrl}/users/`, {
       method: "POST",
       body: JSON.stringify({ name, email, password, role: "customer" }),
       headers: {

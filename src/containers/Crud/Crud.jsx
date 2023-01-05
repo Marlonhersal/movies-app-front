@@ -2,17 +2,19 @@ import React, { useState, useEffect } from "react";
 import S from "./Crud.module.scss";
 import { useSelector } from "react-redux";
 
+const {config}= require('../../../config/config')
+
 function Post(props) {
   const redux = useSelector((state) => state.itemLoaded);
   const [datos, setDatos] = useState({});
   const [newItem, setNewItem] = useState(false);
   const [uptdate, setUpdate] = useState(true);
   const notUptate = ["updatedAt", "createdAt", "id", "age", "movie","actors", "movies"];
-
   useEffect(() => {
     setDatos(redux);
   }, [redux]);
 
+  console.log("Hola")
   const handleDataChange = (e) => {
     const { name, value } = e.target;
     setDatos({
@@ -28,7 +30,7 @@ function Post(props) {
     notUptate.forEach((x) => {
       delete info[x];
     });
-    fetch(`http://localhost:3000/${props.element}/${props.id}`, {
+    fetch(`${config.apiUrl}/${props.element}/${props.id}`, {
       method: "PATCH",
       body: JSON.stringify(info),
       headers: {
@@ -51,7 +53,7 @@ function Post(props) {
   };
 
   const borrar = () => {
-    fetch(`http://localhost:3000/${props.element}/${props.id}`, {
+    fetch(`${config.apiUrl}/${props.element}/${props.id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -85,7 +87,7 @@ function Post(props) {
     notUptate.forEach((x) => {
       delete info[x];
     });
-    fetch(`http://localhost:3000/${props.element}`, {
+    fetch(`${config.apiUrl}/${props.element}`, {
       method: "POST",
       body: JSON.stringify(info),
       headers: {
@@ -99,6 +101,7 @@ function Post(props) {
           return setMessage("Las credenciales no son validas");
         }
         console.log(res);
+        setNewItem(true)
       })
       .catch(function (error) {
         console.log("Hubo un problema con la petición Fetch:" + error.message);
@@ -109,7 +112,7 @@ function Post(props) {
     e.preventDefault();
     const actorId = document.getElementById("idActor").value;
     const movieId = datos.id;
-    fetch(`http://localhost:3000/movies/add-actor`, {
+    fetch(`${config.apiUrl}/movies/add-actor`, {
       method: "POST",
       body: JSON.stringify({ movieId, actorId }),
       headers: {
@@ -127,7 +130,7 @@ function Post(props) {
   };
 
   const eliminarActor =(id)=>{
-    fetch(`http://localhost:3000/movies/remove-actor/` + id, {
+    fetch(`${config.apiUrl}/movies/remove-actor/` + id, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -208,8 +211,6 @@ function Post(props) {
         <input type="button" value="Nuevo" id="create_button" onClick={create}/>
       }
       </div>
-      
-      
     </form>
     </div>
   );

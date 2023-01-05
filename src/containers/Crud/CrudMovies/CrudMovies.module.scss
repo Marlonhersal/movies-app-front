@@ -1,0 +1,36 @@
+.container{
+    background-color: rgb(119, 119, 186);
+    display: flex;
+    justify-content: center;
+}
+.info_container{
+    margin-top: 30px;
+    overflow: auto;
+    padding: 0px;
+    width: 80%;
+    height: 80%;
+    background-color: rgb(191, 192, 211);
+}
+.info_containe{
+    font-size: 14px;
+}
+
+.two{
+    display: flex;
+}
+.id{
+    font-size: 20px;
+}
+
+.container div{
+    margin: 0 auto;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.deleteButton{
+    width: 50%;
+    height: 28px;
+    margin-top: 10px;
+    background-color: red;
+}

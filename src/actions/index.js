@@ -1,10 +1,12 @@
 
+const {config}= require('../../config/config')
+
 export function addMovieFavorite(payload) {
     return { type: "ADD_MOVIE_FAVORITE", payload };
 }
 export function addItemLoaded(element, id, token) {
     return function(dispatch) {
-    return fetch(`http://localhost:3000/${element}/${id}`, {
+    return fetch(`${config.apiUrl}/${element}/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -29,7 +31,7 @@ export function getMovies(titulo) {
 }
 export function getItems(entidad, token) {
     return function(dispatch) {
-      return fetch(`http://localhost:3000/${entidad}/`, {
+      return fetch(`${config.apiUrl}/${entidad}/`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

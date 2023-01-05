@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Style from "./Login.module.scss";
 import { Link, Navigate } from "react-router-dom";
 import { data } from "autoprefixer";
+const {config}= require('../../../config/config')
 
 function Login(props) {
   const [email, setEmail] = useState("");
@@ -14,7 +15,7 @@ function Login(props) {
     if (!/\S+@\S+\.\S+/.test(email)) return setMessage("Email requerido");
     if (!password) return setMessage("Contraseña requerida");
 
-    fetch("http://localhost:3000/auth/login", {
+    fetch(`${config.apiUrl}/auth/login`, {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: {
