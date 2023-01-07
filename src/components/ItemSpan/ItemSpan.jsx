@@ -6,7 +6,7 @@ import S from "./ItemSpan.module.scss"
 
 function ItemSpan(props) {
     return (
-        <div>
+        <div className={S.target}>
             <span className={S.id}>{props.id} </span>
             <span className={S.name}>{props.name}</span>
         </div>
