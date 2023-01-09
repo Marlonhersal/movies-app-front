@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Style from "./Login.module.scss";
 import { Link, Navigate } from "react-router-dom";
 import { data } from "autoprefixer";
-const {config}= require('../../../config/config')
+const {config}= require('../../../../config/config')
 
 function Login(props) {
   const [email, setEmail] = useState("");

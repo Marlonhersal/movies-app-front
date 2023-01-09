@@ -3,7 +3,7 @@ import S from   './AdminTols.module.scss';
 import NavBarAdmin from '../../../components/Admin/NavBarAdmin/NavBarAdmin';
 import Items from '../Items/Items';
 import CrudMovies from '../Crud/CrudMovies/CrudMovies';
-import Lista from "../../../components/RelationsList/Relaciones";
+import Lista from "../../../components/Admin/RelationsList/Relaciones";
 import {useDispatch} from 'react-redux';
 import {getItems, addItemLoaded} from "../../../actions/index";
 import { useParams } from 'react-router-dom';
@@ -17,7 +17,7 @@ function AdminTols(props) {
             <div className={S.container}>
                 <Items className={S.c1} element={"movies"}  token={token}/>
                 <CrudMovies className={S.c2} element={"movies"} token={token}/>
-                <Lista className={S.c2} title="Actores" token={token} />
+                <Lista className={S.c2} relationName="actors" title="Actores" edit="true" token={token} />
             </div>
         </div>
     );

@@ -1,12 +1,12 @@
 import React from 'react';
-import NavBar from '../../components/NavBar/NavBar';
-import DetailMovie from '../../components/DetailMovie/DetailMovie';
+import NavBar from '../../../components/Users/NavBar/NavBar';
+import DetailMovie from '../../../components/Users/DetailMovie/DetailMovie';
 
 import {useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 //Redux
-import {getMovieDetail} from "../../actions/index";
+import {getMovieDetail} from "../../../actions/index";
 
 function  MovieDetail(props) {
     const despachador = useDispatch()

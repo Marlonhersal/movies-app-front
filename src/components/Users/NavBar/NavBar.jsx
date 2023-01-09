@@ -1,6 +1,6 @@
 import React from 'react';
 // Import our custom CSS
-import '../../styles/bootstrap.scss'
+import '../../../styles/bootstrap.scss'
 import jwt_decode from "jwt-decode";
 
 // Import all of Bootstrap's JS

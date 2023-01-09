@@ -6,10 +6,10 @@ import "../styles/global.scss";
 //Containers
 import PrivateRoute from "../containers/PrivateRoute.jsx";
 import Welcome from "../containers/User/Welcome/Welcome";
-import Login from "../containers/Login/Login";
-import Register from "../containers/Register/Register";
+import Login from "../containers/User/Login/Login";
+import Register from "../containers/User/Register/Register";
 import Browse from "../containers/User/Browse/Browse";
-import MovieDetail from "../containers/MovieDetail/MovieDetail";
+import MovieDetail from "../containers/User/MovieDetail/MovieDetail";
 import DirectorsBrowser from "../containers/User/Directors/DirectorsBrowser";
 
 //Administrador

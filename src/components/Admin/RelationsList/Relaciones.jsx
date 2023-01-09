@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import S from "./Relaciones.module.scss";
 import { useSelector } from "react-redux";
 
-const {config}= require('../../../config/config')
+const {config}= require('../../../../config/config')
 
 function Post(props) {
 
-  const datos = useSelector((state) => state.itemLoaded);
-  const [movie, setMovie] = useState([]);
+  const redux = useSelector((state) => state.itemLoaded);
+  const [datos, setDatos] = useState([]);
   const [message, setMessage] = useState("")
 
   useEffect(() => {
-    setMovie(datos)
-  }, [datos]);
+    setDatos(redux)
+  }, [redux]);
   
 
   const agregarActor = (e) => {
@@ -57,18 +57,25 @@ function Post(props) {
   return (
     <div className={S.relations_container}>
         <h3>{props.title}</h3>
-        <div className={S.add_actor}>
+        {
+          props.edit?
+          <div className={S.add_actor}>
           <input type="number" placeholder="Id" id="idActor" />
           <input type="button" value="Agregar Actor" onClick={agregarActor}/>
           <p className={S.message}>{message}</p>
-        </div>
+        </div>:null
+        }
+        
         <ul className={S.list_container}>
         {
-            movie.actors?.map((item)=>(<li className={S.list_item}>
+            datos[props.relationName]?.map((item)=>(<li className={S.list_item}>
                 <p>ID: {item.id}</p>
                 <p>Nombre: {item.name}</p>
                 <p>País: {item.country}</p>
-                <input type="button" value="Borrar actor" onClick={()=>eliminarActor(item.MovieActor.id)} />
+                {
+                  props.edit?
+                  <input type="button" value="Borrar actor" onClick={()=>eliminarActor(item.MovieActor.id)} />:null
+                }
             </li>))
         }
         </ul>

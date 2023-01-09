@@ -4,7 +4,7 @@ import { Link, redirect } from "react-router-dom";
 
 import Style from "./Register.module.scss";
 
-const {config}= require('../../../config/config')
+const {config}= require('../../../../config/config')
 
 function Register(props) {
   const [name, setName] = useState("");

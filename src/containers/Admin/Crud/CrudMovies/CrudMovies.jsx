@@ -19,7 +19,6 @@ function Post(props) {
     setCreate(false)
     setWelcomeMessage(false)
     setMessage("")
-    console.log("gola")
   }, [datos]);
   useEffect(()=>{
     setWelcomeMessage(true)
@@ -61,7 +60,7 @@ function Post(props) {
       .then((res) => {
         if(res.statusCode === 400) return setMessage(res.message);
         setUpdate(false);
-        //window.location.reload()
+        window.location.reload()
       })
       .catch(function (error) {
         console.log("Hubo un problema con la petición Fetch:" + error.message);
@@ -108,6 +107,7 @@ function Post(props) {
     })
       .then((res) => res.json())
       .then((res) => {
+        if(res.statusCode === 400) return setMessage(res.message);
         alert(`Usuario ${res} eliminado`);
         window.location.reload();
       })
