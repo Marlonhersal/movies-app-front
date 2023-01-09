@@ -1,0 +1,40 @@
+@import '../../../styles/vars';
+
+.product_card{
+    width: 240px;
+}
+.product_card img{
+    width: 230px;
+    height: 130px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.product_info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+.product_info a{
+    color: white;
+    text-decoration: none;
+}
+
+.product_info  p{
+    color: white;
+    font-weight: bold;
+    font-size: var(--md);
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+@media (max-width:640px)
+{
+    .product-card{
+        width: 140px;
+    }
+    .product-card img{
+        width: 140px;
+        height: 140px;
+    }
+
+}

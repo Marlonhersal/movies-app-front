@@ -1,8 +1,8 @@
 import React from 'react';
-import S from   './AdminTolsMovies.module.scss';
-import NavBarAdmin from '../../../components/NavBarAdmin/NavBarAdmin';
-import Items from '../../Items/Items';
-import CrudActors from '../../Crud/CrudActors/CrudActors';
+import S from   './AdminTols.module.scss';
+import NavBarAdmin from '../../../components/Admin/NavBarAdmin/NavBarAdmin';
+import Items from '../Items/Items';
+import CrudActors from '../Crud/CrudActors/CrudActors';
 import {useDispatch} from 'react-redux';
 import {getItems, addItemLoaded} from "../../../actions/index";
 import { useParams } from 'react-router-dom';

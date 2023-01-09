@@ -5,12 +5,12 @@ import "../styles/global.scss";
 
 //Containers
 import PrivateRoute from "../containers/PrivateRoute.jsx";
-import Welcome from "../containers/Welcome/Welcome";
+import Welcome from "../containers/User/Welcome/Welcome";
 import Login from "../containers/Login/Login";
 import Register from "../containers/Register/Register";
-import Browse from "../containers/Browse/Browse";
+import Browse from "../containers/User/Browse/Browse";
 import MovieDetail from "../containers/MovieDetail/MovieDetail";
-import DirectorsBrowser from "../containers/Directors/DirectorsBrowser";
+import DirectorsBrowser from "../containers/User/Directors/DirectorsBrowser";
 
 //Administrador
 import AdminRoute from "../containers/AdminRoute.jsx";

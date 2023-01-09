@@ -1,0 +1,55 @@
+.relations_container{
+    background-color: rgb(118, 56, 56);
+    padding: 15px;
+}
+.relations_container h3{
+    color: wheat;
+    text-align: center
+}
+
+.add_actor{
+    background-color: antiquewhite;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.add_actor :first-child {
+    width: 50px;
+}
+
+.list_container{
+    height: 320px;
+    overflow-y: auto;
+    padding: 0;
+    list-style: none;
+    background-color: rgb(170, 152, 189);
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.list_item {
+    margin: 15px 10px;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: rgb(27, 114, 114);
+}
+.list_item input{
+    background-color: beige;
+}
+
+.message {
+    color: rgb(0, 0, 0);
+    background-color: red;
+}
+
+@media (min-width:740px)
+{
+    .relations_container{
+        height: 92%;
+    }
+
+}
+    
+
+
