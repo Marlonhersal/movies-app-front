@@ -18,6 +18,11 @@ const initialState = {
                 ...state,
                 moviesLoaded: action.payload.Search
             }
+        case "GET_ALL_MOVIES":
+            return {
+                ...state,
+                moviesLoaded: action.payload
+            }
         case "REMOVE_MOVIE_FAVORITE":
             return {
                 ...state,

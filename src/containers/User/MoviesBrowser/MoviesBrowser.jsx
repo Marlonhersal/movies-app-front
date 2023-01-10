@@ -1,23 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Style from './MoviesBrowser.module.scss'
+import { useDispatch } from 'react-redux';
 
 import {Link } from "react-router-dom";
 
-import MovieCard from '../../../components/Users/Movie/MovieCard';
+import MovieCard from '../../../components/Users/MovieCard/MovieCard';
 
 //Redux
 import { connect } from "react-redux";
-import {addMovieFavorite,getMovies} from "../../../actions/index";
+import {getAllMovies} from "../../../actions/index";
 
 function MoviesBrowser(props) {
+    const token = localStorage.getItem('Token');
+    const despachador = useDispatch()
+    useEffect(() => {
+        despachador(getAllMovies(token))
+      }, []);
     return (
         <section className={Style.main_container}>
         <div className={Style.cards_container}>
          {
           props.movies?
           props.movies.map((movie) =>{
-            return <MovieCard key={movie.imdbID} Id ={movie.imdbID} Poster= {movie.Poster}  Title={movie.Title} Year={movie.Year} />
+            return <MovieCard {...movie}  />
         }):
         <h1>No se encontraron resultados</h1>
         }

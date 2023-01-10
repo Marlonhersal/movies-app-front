@@ -2,24 +2,45 @@
     margin-top: 50px;
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: auto auto ;
-    
-    place-content: center;
+    grid-template-rows: auto auto auto ;
     color: white;
 }
-
-.c1 {
-    border-radius: 10px;
+.movie_director {
+    display: flex;
+    margin: 0 20px 20px;
 }
+
+.movie_director > div{
+    align-self: center;
+    margin-left: 8px;
+}
+
+.movie_director img{
+    width: 230px;
+    height: 320px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.c1 {
+    margin: 0 auto 40px;
+}
+
 .c2{
     margin-left: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+ 
 }
 .c3{
     margin-top: 20px;
    
+}
+.c4{
+    margin-left: 20px;
+    border-color: rebeccapurple;
+    display: flex;
+    
+}
+.c4 > div {
+    border: 5px solid blue;
 }
 
 @media (min-width:640px)

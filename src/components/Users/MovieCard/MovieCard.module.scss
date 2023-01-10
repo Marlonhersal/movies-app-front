@@ -1,26 +1,22 @@
 @import '../../../styles/vars';
 
-.product_card{
+.movie_card{
     width: 240px;
 }
-.product_card img{
+.movie_card img{
     width: 230px;
-    height: 130px;
+    height: 320px;
     border-radius: 20px;
     object-fit: cover;
 }
-.product_info{
+.movie_info{
     display: flex;
-    justify-content: space-between;
+    justify-content:space-around;
     align-items: center;
     margin-top: 12px;
 }
-.product_info a{
-    color: white;
-    text-decoration: none;
-}
 
-.product_info  p{
+.movie_info  p{
     color: white;
     font-weight: bold;
     font-size: var(--md);
@@ -29,10 +25,10 @@
 }
 @media (max-width:640px)
 {
-    .product-card{
+    .movie-card{
         width: 140px;
     }
-    .product-card img{
+    .movie-card img{
         width: 140px;
         height: 140px;
     }

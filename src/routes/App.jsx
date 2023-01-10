@@ -10,7 +10,7 @@ import Login from "../containers/User/Login/Login";
 import Register from "../containers/User/Register/Register";
 import Browse from "../containers/User/Browse/Browse";
 import MovieDetail from "../containers/User/MovieDetail/MovieDetail";
-import DirectorsBrowser from "../containers/User/Directors/DirectorsBrowser";
+import DirectorsBrowser from "../containers/User/DirectorsBrowser/DirectorsBrowser";
 
 //Administrador
 import AdminRoute from "../containers/AdminRoute.jsx";
