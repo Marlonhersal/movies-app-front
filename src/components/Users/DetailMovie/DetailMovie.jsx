@@ -25,19 +25,15 @@ function DetailMovie(props) {
         <p>{props.director?.country}</p>
         </div>
     </div>
-    <div className={Style.c4}>
+    <div className={`${Style.movie_actors} ${Style.c4}`}>
+      {
+        props.actors?.map((actor)=>(
         <div>
-            <p>Marlon Hernandez</p>
-            <p>Contrase</p>
+            <p>{actor.name}</p>
+            <img src={actor.image} alt="" />
         </div>
-        <div>
-            <p>Marlon Hernandez</p>
-            <p>Contrase</p>
-        </div>
-        <div>
-            <p>Marlon Hernandez</p>
-            <p>Contrase</p>
-        </div>
+        ))
+      }
     </div>
     </div>
   );

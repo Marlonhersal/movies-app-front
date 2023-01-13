@@ -5,6 +5,7 @@ import "../styles/global.scss";
 
 //Containers
 import PrivateRoute from "../containers/PrivateRoute.jsx";
+import PublicRoute from "../containers/PublicRoute";
 import Welcome from "../containers/User/Welcome/Welcome";
 import Login from "../containers/User/Login/Login";
 import Register from "../containers/User/Register/Register";
@@ -23,9 +24,11 @@ const App = () => {
   const token = localStorage.getItem('Token');
   return (
     <Routes>
+      <Route element={<PublicRoute user={token} path="/browse"/>}>
         <Route path="/" element={<Welcome />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+      </Route>
       <Route element={<PrivateRoute user={token} path="/"/>}>
         <Route path="/browse" element= {<Browse/>} />
         <Route path="/movie/:movieId" element={<MovieDetail />} />

@@ -218,13 +218,12 @@ function Post(props) {
               <label>Descripción:</label>
               <br />
               {update ? (
-                <input
-                  className={S.input_description}
-                  type="text"
-                  name="description"
-                  value={movie.description}
-                  onChange={handleDataChange}
-                />
+                <textarea  maxlength="500"  rows="10" className={S.input_description}
+                type="text"
+                name="description"
+                value={movie.description}
+                onChange={handleDataChange}
+              />
               ) : (
                 <p>{datos.description}</p>
               )}

@@ -1,5 +1,5 @@
 .movieDetail_container{
-    margin-top: 50px;
+    margin: 50px;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto ;
@@ -7,7 +7,8 @@
 }
 .movie_director {
     display: flex;
-    margin: 0 20px 20px;
+    justify-content: center;
+    margin: 10px;
 }
 
 .movie_director > div{
@@ -33,18 +34,45 @@
     margin-top: 20px;
    
 }
-.c4{
-    margin-left: 20px;
-    border-color: rebeccapurple;
+.movie_actors{
     display: flex;
-    
+    flex-direction: row;
+    overflow-x: auto;
+    width: 90%;
+    height: 300px;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid red;
 }
-.c4 > div {
-    border: 5px solid blue;
+
+.movie_actors > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    margin: 5px;
+    border: 1px solid white;
+    align-items: center;
+}
+
+.movie_actors > div p{
+    text-align: center;
+}
+.movie_actors > div img{
+    width: 130px;
+    object-fit: cover;
+    padding: 10px;
 }
 
 @media (min-width:640px)
 {
+    .c3 img{
+        height: 300px;
+        object-fit: cover;
+    }
+    .c4{
+        margin: 0 auto;
+    }
     .movieDetail_container{
         margin-top: 50px;
         display: grid;
@@ -52,12 +80,8 @@
         grid-template-rows: auto auto ;
         place-content: center;
         color: white;
-        }
-    
-    
-    .c3{
-        grid-column: 1/3;
     }
+    
    
     
 
