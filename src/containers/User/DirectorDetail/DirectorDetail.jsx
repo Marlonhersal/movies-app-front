@@ -1,18 +1,22 @@
 import React, { useEffect } from "react";
+import DetailDirector from "../../../components/Users/DetailDirector/DetailDirector";
+
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import DetailMovie from "../../../components/Users/DetailMovie/DetailMovie";
+
+//Redux
 import { getDetail } from "../../../actions/index";
 
-function MovieDetail(props) {
+const DirectorDetail = () => {
   const token = localStorage.getItem("Token");
   const despachador = useDispatch();
   let { id } = useParams();
   useEffect(() => {
-    despachador(getDetail(id, "movies", token));
+    despachador(getDetail(id, "directors", token));
   }, []);
-  const movieDetail = useSelector((state) => state.Detail);
-  return <DetailMovie {...movieDetail} />;
-}
+  const detail = useSelector((state) => state.Detail);
+  console.log(detail);
+  return <DetailDirector {...detail} />;
+};
 
-export default MovieDetail;
+export default DirectorDetail;

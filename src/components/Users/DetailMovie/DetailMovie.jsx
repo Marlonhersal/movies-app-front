@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from 'react-router-dom';
 import Style from "./DetailMovie.module.scss";
 
 function DetailMovie(props) {
@@ -18,6 +18,7 @@ function DetailMovie(props) {
         <p>{props.description}</p>
       </div>
 
+      <Link to={`/director/${props.director?.id}`}>
     <div className={`${Style.movie_director} ${Style.c3}`}>
         <img src={props.director?.image} alt="" />
         <div>
@@ -25,12 +26,16 @@ function DetailMovie(props) {
         <p>{props.director?.country}</p>
         </div>
     </div>
+        </Link>
+        
     <div className={`${Style.movie_actors} ${Style.c4}`}>
       {
         props.actors?.map((actor)=>(
-        <div>
-            <p>{actor.name}</p>
-            <img src={actor.image} alt="" />
+          <div>
+            <Link to={`/actor/${actor.id}`}>
+              <p>{actor.name}</p>
+              <img src={actor.image} alt="" />
+            </Link>
         </div>
         ))
       }

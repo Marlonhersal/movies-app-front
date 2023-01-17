@@ -13,7 +13,6 @@ function AdminTols(props) {
     const token = localStorage.getItem('Token');
     return (
         <div>
-            <NavBarAdmin/>
             <div className={S.container}>
                 <Items className={S.c1} element={"actors"}  token={token}/>
                 <CrudActors className={S.c2} element={"actors"} token={token}/>

@@ -1,24 +1,23 @@
 import React, { useEffect } from "react";
-
-import Style from "./MoviesBrowser.module.scss";
+import Style from "./DirectorBrowser.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-
 import { getAllObjects } from "../../../actions/index";
-import MovieCard from "../../../components/Users/MovieCard/MovieCard";
 
-function MoviesBrowser(props) {
+import PersonCard from "../../../components/Users/PersonCard/PersonCard";
+
+const DirectorBrowse = () => {
   const token = localStorage.getItem("Token");
   const despachador = useDispatch();
   useEffect(() => {
-    despachador(getAllObjects("movies", token));
+    despachador(getAllObjects("directors", token));
   }, []);
-  const movies = useSelector((state) => state.Loaded);
+  const directors = useSelector((state) => state.Loaded);
   return (
     <section className={Style.main_container}>
       <div className={Style.cards_container}>
-        {movies ? (
-          movies.map((movie) => {
-            return <MovieCard {...movie} />;
+        {Object.entries(directors).length !== 0 ? (
+          directors.map((director) => {
+            return <PersonCard entidad="director" {...director} />;
           })
         ) : (
           <h1>No se encontraron resultados</h1>
@@ -26,6 +25,6 @@ function MoviesBrowser(props) {
       </div>
     </section>
   );
-}
+};
 
-export default MoviesBrowser;
+export default DirectorBrowse;

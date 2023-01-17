@@ -1,0 +1,88 @@
+.movieDetail_container{
+    margin: 50px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto ;
+    color: white;
+}
+.movie_director {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.movie_director > div{
+    align-self: center;
+    margin-left: 8px;
+}
+
+.movie_director img{
+    width: 230px;
+    height: 320px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.c1 {
+    margin: 0 auto 40px;
+}
+
+.c2{
+    margin-left: 15px;
+ 
+}
+.c3{
+    margin-top: 20px;
+   
+}
+.movie_actors{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    width: 90%;
+    height: 300px;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid red;
+}
+
+.movie_actors > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    margin: 5px;
+    border: 1px solid white;
+    align-items: center;
+}
+
+.movie_actors > div p{
+    text-align: center;
+}
+.movie_actors > div img{
+    width: 130px;
+    object-fit: cover;
+    padding: 10px;
+}
+
+@media (min-width:640px)
+{
+    .c3 img{
+        height: 300px;
+        object-fit: cover;
+    }
+    .c4{
+        margin: 0 auto;
+    }
+    .movieDetail_container{
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto ;
+        place-content: center;
+        color: white;
+    }
+    
+   
+    
+
+}

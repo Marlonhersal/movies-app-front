@@ -1,15 +1,13 @@
 import React from 'react';
-// Import our custom CSS
-import '../../../styles/bootstrap.scss'
+import { Link } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 
-// Import all of Bootstrap's JS
+//Bootstrap
+import '../../../styles/bootstrap.scss'
 import * as bootstrap from 'bootstrap'
 
 import SearchBar from '../SearchBar/SearchBar';
-
 import Style from "./NavBar.scss"
-
 
 function NavBar(props) {
     const token = localStorage.getItem('Token');
@@ -23,33 +21,32 @@ function NavBar(props) {
     return (
     <nav className= "navbar navbar-expand-lg bg-light">
       <div className= "container-fluid">
-            <a className="navbar-brand " href="/" >Movies App</a>
+            <Link className="navbar-brand" to="/">Movies App</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span  className="navbar-toggler-icon "></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="#">Home</a>
+            <Link className="nav-link active" to="/browse">Home</Link>
           </li>
           {
             decoded.role === 'admin'?
             <li className="nav-item admin-tools-li">
-            <a className="nav-link active" aria-current="page" href="/admin/users">ADMIN TOOLS</a>
+              <Link className="nav-link active" to="/admin/users">ADMIN TOOLS</Link>
           </li>: <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="#">Favoritas</a>
+              <Link className="nav-link active" to="/">Favoritas</Link>
           </li>
           }
-          
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="#">Directores</a>
+            <Link className="nav-link active" to="/directors">Directores</Link>
           </li>
-          <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="#">Actores</a>
+          <li className="nav-item"> 
+            <Link className="nav-link active" to="/actors">Actores</Link>
           </li>
-          
-            
+
           <SearchBar/>
+
           <div className="nav-item user-info-movile">
             <p className='c1'>{decoded.name}</p>
             <p className='c2'>{decoded.email}</p> 

@@ -1,0 +1,36 @@
+@import '../../../styles/vars';
+
+.movie_card{
+    width: 240px;
+}
+.movie_card img{
+    width: 230px;
+    height: 320px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.movie_info{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.movie_info  p{
+    color: white;
+    font-weight: bold;
+    font-size: var(--md);
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+@media (max-width:640px)
+{
+    .movie-card{
+        width: 140px;
+    }
+    .movie-card img{
+        width: 140px;
+        height: 140px;
+    }
+
+}

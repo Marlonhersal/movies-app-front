@@ -7,7 +7,6 @@ import '../../styles/bootstrap.scss'
 // Import all of Bootstrap's JS
 import * as bootstrap from 'bootstrap'
  */
-import {addMovieFavorite,getMovies} from "../../../actions/index";
 
 function SearchBar(props) {
     const despachador = useDispatch()
